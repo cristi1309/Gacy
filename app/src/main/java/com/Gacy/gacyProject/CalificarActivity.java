@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.util.Log;
+import android.renderscript.Element;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -56,6 +59,12 @@ public class CalificarActivity extends AppCompatActivity {
                 obtenerInfoCiclista();
 
 
+                //Intent intent = new Intent(CalificarActivity.this, InformacionReservaActivity.class);
+                //startActivity(intent);
+                //finish();
+                //return;
+
+
 
             }
         });
@@ -103,32 +112,44 @@ public class CalificarActivity extends AppCompatActivity {
                 if(dataSnapshot.exists() && dataSnapshot.getChildrenCount()>0){
 
                     Map<String, Object> map = (Map<String,Object>) dataSnapshot.getValue();
+                    cal = Double.parseDouble(calficar);
+                    if(cal!=0.0){
+                        if(map.get("Calificacion") != null){
 
-                    if(map.get("Calificacion") != null){
+                            calif = map.get("Calificacion").toString();
 
-                        calif = map.get("Calificacion").toString();
+                            calific = Double.parseDouble(calif);
+                            cal = Double.parseDouble(calficar);
 
-                        calific = Double.parseDouble(calif);
-                        cal = Double.parseDouble(calficar);
+                            calific = calific + cal;
+                            //calific = calific / 2 ;
 
-                       calific = calific + cal;
-                       //calific = calific / 2 ;
+                            //se crea un post (instancia en la Bd para un usuario)
+                            //Map newPost = new HashMap();
+                            //newPost.put("Calificacion", calif);
+                            double d = calific.doubleValue();
 
-                        //se crea un post (instancia en la Bd para un usuario)
-                        //Map newPost = new HashMap();
-                        //newPost.put("Calificacion", calif);
-                        mAnfitrionReference.child("Calificacion").setValue(calific);// se le da un username en el post que será mandado para registrar en la bd de firebase
+                            Log.i("Hola_________________________", calific.toString() + d);
+
+                            //mAnfitrionReference.child("Calificacion").setValue(calific);// se le da un username en el post que será mandado para registrar en la bd de firebase
+                            mAnfitrionReference.child("Calificacion").setValue(d);
+                            d = 0;
+
+                            //mAnfitrionReference.child("Calificacion").setValue(calific.doubleValue());
+                            finish();
+
+                            //se manda toda la info del Map a la bd para que se ingrese y registre al usuario con la nueva información
+                            //mAnfitrionReference.setValue(newPost);
+
+
+                        }
+                        calficar = "0";
+                        Intent intent = new Intent(CalificarActivity.this, PerfilCiclistaActivity.class);
+                        startActivity(intent);
                         finish();
-
-                        //se manda toda la info del Map a la bd para que se ingrese y registre al usuario con la nueva información
-                        //mAnfitrionReference.setValue(newPost);
-
-
                     }
-                    Intent intent = new Intent(CalificarActivity.this, PerfilCiclistaActivity.class);
-                    startActivity(intent);
-                    finish();
-                    return;
+
+
                 }
 
             }

@@ -15,18 +15,22 @@
         android:textSize="20dp"
         android:text="Iniciar Sesión"
         />
+
     <EditText
+        android:id="@+id/correoLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Correo"
-        android:textAlignment="center"
-        android:id="@+id/correoLogin"/>
+        android:inputType="textEmailAddress"
+        android:textAlignment="center" />
+
     <EditText
+        android:id="@+id/contrasenaLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
-        android:textAlignment="center"
-        android:id="@+id/contrasenaLogin"/>
+        android:inputType="textPassword"
+        android:textAlignment="center" />
     <Button
         android:layout_width="150sp"
         android:layout_height="35sp"
@@ -45,26 +49,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Correo"
+        android:inputType="textEmailAddress"
         android:id="@+id/correoRegis"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Contraseña"
+        android:inputType="textPassword"
         android:id="@+id/contrasenaRegis"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
+        android:inputType="text"
         android:id="@+id/usernameRegis"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nombre"
+        android:inputType="text"
         android:id="@+id/nombreRegis"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Telefono"
+        android:inputType="number"
         android:id="@+id/telefonoRegis"/>
 
     <EditText
@@ -72,6 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Dirección"
+        android:inputType="text"
         android:id="@+id/direccionRegis"
         />
 
