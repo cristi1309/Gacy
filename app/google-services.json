@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "800770534302",
+    "firebase_url": "https://gacy-3cb64.firebaseio.com",
+    "project_id": "gacy-3cb64",
+    "storage_bucket": "gacy-3cb64.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800770534302:android:9087d296bd39ed39",
+        "android_client_info": {
+          "package_name": "com.Gacy.gacyProject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800770534302-qdjfb6nkbann0hg78svrneeiq53knvmu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Gacy.gacyProject",
+            "certificate_hash": "f2966fe07d0c245c359c2aad5332f4fc4150d351"
+          }
+        },
+        {
+          "client_id": "800770534302-3q25smi6gocrbe7hkiihffqpgq1r32nu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBk_T3ZtY235uaImu9aKTp12uXGmuC74S8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800770534302-3q25smi6gocrbe7hkiihffqpgq1r32nu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
