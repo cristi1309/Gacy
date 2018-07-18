@@ -1,96 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="368dp"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     >
 
-    <TextView
-        android:layout_width="200sp"
-        android:layout_height="30sp"
-        android:textAlignment="center"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20dp"
-        android:text="Iniciar Sesión"
-        />
-
-    <EditText
-        android:id="@+id/correoLogin"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center" />
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
 
-    <EditText
-        android:id="@+id/contrasenaLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:textAlignment="center" />
-    <Button
-        android:layout_width="150sp"
-        android:layout_height="35sp"
-        android:layout_gravity="center_horizontal"
-        android:text="Iniciar Sesión"
-        android:layout_marginBottom="15sp"
-        android:id="@+id/botonInicioS"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Crear tu nueva cuenta"
+            android:textSize="25sp"/>
 
+        <EditText
+            android:id="@+id/correoRegis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Registrate"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Correo"
-        android:inputType="textEmailAddress"
-        android:id="@+id/correoRegis"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
-        android:id="@+id/contrasenaRegis"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Username"
-        android:inputType="text"
-        android:id="@+id/usernameRegis"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre"
-        android:inputType="text"
-        android:id="@+id/nombreRegis"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Telefono"
-        android:inputType="number"
-        android:id="@+id/telefonoRegis"/>
+        <EditText
+            android:id="@+id/contrasenaRegis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña" />
 
-    <EditText
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre" />
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Dirección"
-        android:inputType="text"
-        android:id="@+id/direccionRegis"
-        />
+        <EditText
+            android:id="@+id/usernameRegis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username" />
 
-    <Button
-        android:layout_width="150sp"
-        android:layout_height="35sp"
-        android:text="Registrate"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/botonRegis"/>
+        <EditText
+            android:id="@+id/telefonoRegis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefono" />
 
+        <EditText
+            android:id="@+id/direccionRegis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección" />
 
-</LinearLayout>
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rdgGrupo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RadioButton
+                android:id="@+id/ciclista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ciclista" />
+            <RadioButton
+                android:id="@+id/anfitrion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Anfitrion" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/botonRegis"
+            android:layout_width="match_parent"
+            android:layout_height="35sp"
+            android:layout_gravity="center_horizontal"
+            android:text="Registrate" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

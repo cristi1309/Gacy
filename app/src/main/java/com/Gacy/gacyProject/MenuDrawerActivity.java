@@ -21,12 +21,13 @@ public class MenuDrawerActivity extends AppCompatActivity
     private Button mLogout;
     private Boolean isLoggingOut = false;
     private Button mConfig, mPerfil;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_drawer);
-
+        mAuth = FirebaseAuth.getInstance(); // verifica si tiene inicio de sesión o no
         mLogout = (Button) findViewById(R.id.nav_share);
         mConfig = (Button) findViewById(R.id.config);
         mPerfil = (Button) findViewById(R.id.nav_gallery);
@@ -112,17 +113,11 @@ public class MenuDrawerActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {
-            mLogout.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    FirebaseAuth.getInstance().signOut();
-                    Intent intent = new Intent(MenuDrawerActivity.this, InicioAppActivity.class);
-                    startActivity(intent);
-                    finish();
-                    return;
-                }
-            });
+            //FirebaseAuth.getInstance().signOut();
+            mAuth.signOut();
+            Intent intent = new Intent(MenuDrawerActivity.this, InicioAppActivity.class);
+            startActivity(intent);
+            finish();
         } else if (id == R.id.favoritos) {
 
         }
@@ -141,12 +136,11 @@ public class MenuDrawerActivity extends AppCompatActivity
     @Override
     protected void onStop(){
 
-super.onStop();
+    super.onStop();
 
-if(!isLoggingOut){
-
-
-}
+    if(!isLoggingOut){
+        mAuth.signOut();
+    }
 
     }
 }

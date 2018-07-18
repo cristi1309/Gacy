@@ -26,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.Gacy.gacyProject.MainActivity" />
-        <activity android:name="com.Gacy.gacyProject.AnfitrionLoginActivity" />
+        <activity android:name="com.Gacy.gacyProject.Register" />
         <activity android:name="com.Gacy.gacyProject.CiclistaLoginActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
