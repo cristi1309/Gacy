@@ -13,15 +13,27 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 public class MenuDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private Button mLogout;
     private Boolean isLoggingOut = false;
     private Button mConfig, mPerfil;
+    private TextView Usuario, correo;
     private FirebaseAuth mAuth;
+    private DatabaseReference mAnfitrionReference;
+    private String userId, user, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,18 +112,14 @@ public class MenuDrawerActivity extends AppCompatActivity
             finish();
 
         } else if (id == R.id.nav_gallery) {
-
-
-
-
                     Intent intenta = new Intent(MenuDrawerActivity.this, PerfilCiclistaActivity.class);
                     startActivity(intenta);
                     finish();
 
         } else if (id == R.id.reservas) {
-
+            Toast.makeText(MenuDrawerActivity.this, "Estamos trabajando para esta actividad", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_manage) {
-
+            Toast.makeText(MenuDrawerActivity.this, "Estamos trabajando para esta actividad", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_share) {
             //FirebaseAuth.getInstance().signOut();
             mAuth.signOut();
@@ -119,7 +127,7 @@ public class MenuDrawerActivity extends AppCompatActivity
             startActivity(intent);
             finish();
         } else if (id == R.id.favoritos) {
-
+            Toast.makeText(MenuDrawerActivity.this, "Estamos trabajando para esta actividad", Toast.LENGTH_SHORT).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

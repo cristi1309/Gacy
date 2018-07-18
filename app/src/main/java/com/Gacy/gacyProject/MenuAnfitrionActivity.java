@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MenuAnfitrionActivity extends AppCompatActivity {
 
@@ -35,13 +36,16 @@ public class MenuAnfitrionActivity extends AppCompatActivity {
         mReserva.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(MenuAnfitrionActivity.this, "Estamos trabajando para esta actividad", Toast.LENGTH_SHORT).show();
             }
         });
         mConfigu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MenuAnfitrionActivity.this, MenuDrawerActivity.class);
+                startActivity(intent);
+                finish();
+                return;
             }
         });
 

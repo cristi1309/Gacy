@@ -88,10 +88,10 @@ public class Register extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 if (checkedId == R.id.ciclista){
                     tipoUsuario = "Ciclista";
-                    Toast.makeText(Register.this, tipoUsuario, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Register.this, tipoUsuario, Toast.LENGTH_SHORT).show();
                 }else if (checkedId == R.id.anfitrion){
                     tipoUsuario = "Anfitrion";
-                    Toast.makeText(Register.this, tipoUsuario, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(Register.this, tipoUsuario, Toast.LENGTH_SHORT).show();
                 }
             }
 
